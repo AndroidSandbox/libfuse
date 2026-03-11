@@ -25,6 +25,11 @@
 #include <sys/statvfs.h>
 #include <sys/uio.h>
 
+#ifdef __ANDROID__
+#define pthread_setcancelstate(x, y)
+#define pthread_cancel(c)
+#endif
+
 #ifdef __cplusplus
 extern "C" {
 #endif

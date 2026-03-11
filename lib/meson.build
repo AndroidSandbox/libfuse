@@ -4,7 +4,7 @@ libfuse_sources = ['fuse.c', 'fuse_i.h', 'fuse_loop.c', 'fuse_loop_mt.c',
                    'helper.c', 'modules/subdir.c', 'mount_util.c',
                    'fuse_log.c', 'compat.c', 'util.c', 'util.h' ]
 
-if host_machine.system().startswith('linux')
+if host_machine.system().startswith('linux') or host_machine.system() == 'android'
    libfuse_sources += [ 'mount.c' ]
 else
    libfuse_sources += [ 'mount_bsd.c' ]
